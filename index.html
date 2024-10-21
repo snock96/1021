@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: rgb(142, 207, 238);
+    }
+    .box ,.box_2, .box_3
+    {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: white;
+      box-shadow: 0 10px 30px 0 rgba(0, 0, 0, .4);
+      margin-right: 20px;
+    }
+
+    .box .percent, .box_2 .percent_2 , .box_3 .percent_3{
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-size: 60%;
+      background-repeat: no-repeat;
+      background-position: center;
+
+      /* background-color: orange; */
+    }
+
+
+    .box .percent svg ,.box_2 .percent_2 svg , .box_3 .percent_3 svg  {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      transform: rotate(-90deg);
+    }
+
+    .box .percent svg circle , .box_2 .percent_2 svg circle, .box_3 .percent_3 svg circle{
+      width: 150px;
+      height: 150px;
+      fill: none;
+      stroke-width: 10;
+      stroke: black;
+      transform: translate(5px, 5px);
+      stroke-dasharray: 440;
+      stroke-linecap: round;
+    }
+
+    .box .percent svg circle:nth-child(1) {
+      stroke-dashoffset: 0;
+      stroke: #f3f3f3;
+    }
+
+    .box .percent svg circle:nth-child(2) {
+      stroke-dashoffset: 440;
+      stroke: #5b1af5;
+      animation: progressCircle 1s linear forwards;
+    }
+
+    .box_2 .percent_2 svg circle:nth-child(1) {
+      stroke-dashoffset: 0;
+      stroke: #f3f3f3;
+    }
+
+    .box_2 .percent_2 svg circle:nth-child(2) {
+      stroke-dashoffset: 440;
+      stroke: #a251ff;
+      animation: progresscircle 1s linear forwards;
+    }
+
+    .box_3 .percent_3 svg circle:nth-child(1) {
+      stroke-dashoffset: 0;
+      stroke: #f3f3f3;
+    }
+
+    .box_3 .percent_3 svg circle:nth-child(2) {
+      stroke-dashoffset: 440;
+      stroke: #f87c16;
+      animation: Progresscircle 1s linear forwards;
+    }
+    @keyframes progressCircle {
+      100% {
+        stroke-dashoffset: 176;
+        
+      }
+    }
+
+    @keyframes progresscircle{
+      100%{
+        stroke-dashoffset: 110;
+      }
+    }
+
+    @keyframes Progresscircle{
+      100%{
+        stroke-dashoffset: 154;
+      }
+    }
+
+    .box .percent .number ,.box_2 .percent_2 .number ,  .box_3 .percent_3 .number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #111;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="percent">
+      <svg>
+        <circle cx="70", cy="70", r="70"></circle>
+        <circle cx="70", cy="70", r="70"></circle>
+      </svg>
+      <div class="number">
+        <h2>60<span>%</span></h2>
+      </div>
+    </div>
+    <h2 class="text">After Effects</h2>
+  </div>
+  <div class="box_2">
+    <div class="percent_2">
+      <svg>
+        <circle cx="70", cy="70", r="70"></circle>
+        <circle cx="70", cy="70", r="70"></circle>
+      </svg>
+      <div class="number">
+        <h2>75<span>%</span></h2>
+      </div>
+    </div>
+    <h2 class="text">Preimer Pro</h2>
+  </div>
+  <div class="box_3">
+    <div class="percent_3">
+      <svg>
+        <circle cx="70", cy="70", r="70"></circle>
+        <circle cx="70", cy="70", r="70"></circle>
+      </svg>
+      <div class="number">
+        <h2>65<span>%</span></h2>
+      </div>
+    </div>
+    <h2 class="text">Html</h2>
+  </div>
+</body>
+</html>
